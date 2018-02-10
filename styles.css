@@ -158,22 +158,12 @@ html {
   font-family: 'Open Sans';
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 2fr;
 }
 
 .project {
   position: relative;
   background-size: cover;
-}
-
-.project-notes{
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .onboard{
@@ -204,20 +194,8 @@ html {
   transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
 }
 
-.overlay-project{
-  left: 100%
-}
-
-.project:hover .overlay{
-  left: 0;
-}
-
 .overlay-name{
   bottom: 100%;
-}
-
-#about-text{
-
 }
 
  .name:hover .overlay{
@@ -234,28 +212,15 @@ html {
   left: 0;
 }
 
+.project-btn{
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 3.84375em
+}
 
-  #onboard-btn{
-    grid-area: onboard-btn;
-    height: 100%;
-    width: 80px;
-    border: 1px solid black
-  }
-
-  #urlink-btn{
-    grid-area: urlink-btn;
-    height: 100%;
-    width: 80px;
-    border: 1px solid black
-  }
-
-
-  #stagefast-btn{
-    grid-area: stagefast-btn;
-    height: 100%;
-    width: auto;
-    border: 1px solid black
-  }
 
 @media (min-width: 768px){
   .wrapper {
@@ -264,57 +229,88 @@ html {
     grid-template-rows: 2fr 1fr .5fr;
     width: 100vw;
     height: 100vh;
-    grid-template-areas: "name projects"
-                         "skills projects "
+    grid-template-areas: "name right"
+                         "skills right "
                          "contact contact"
   }
 
-  .onboard-container{
-    position: relative;
+  .right-side{
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "onboard-btn onboard"
+    grid-area: right;
+    grid-template-rows: .1fr 4fr;;
+    grid-template-areas:
+    "projects"
+    "projects"
   }
 
-  .stagefast-container{
-    position: relative;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "stagefast-btn stagefast"
+  .nav-box{
+    grid-area: nav;
+    display:flex;
+    justify-content: space-around;
   }
 
-  .urlink-container{
+  .projects-wrapper {
+    background-size: cover;
     position: relative;
+    grid-area: projects;
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "urlink-btn urlink"
+    grid-template-rows: .1fr 1fr;
+    grid-template-areas:
+    "nav"
+    "project"
   }
 
-  .urlink {
-    grid-area: urlink;
+  .project-notes {
+    grid-area: description;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 100%;
+    left: 0;
     width:100%;
     -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
   }
 
-  .urlink.expand{
+  .project-notes.expand{
     left: 0;
   }
 
+  .overlay-project{
+    top: 50%
+  }
 
-  .onboard {
-    grid-area: onboard;
+  .urlink {
+    grid-area: project;
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 100%;
+    left: 0;
+    width:100%;
+    opacity: .5;
+    -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+    -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+    transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  }
+
+  .urlink.expand{
     bottom: 0;
-    left: 100%;
+  }
+
+  .onboard {
+    opacity: .5;
+    grid-area: project;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 100%;
+    left: 0;
     width:100%;
     -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
@@ -322,39 +318,35 @@ html {
   }
 
   .onboard.expand{
-    left: 0;
+    bottom: 0;
   }
 
   .stagefast {
-    grid-area: stagefast;
+    grid-area: project;
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 100%;
+    bottom: 100%;
+    left: 0;
     width:100%;
+    opacity: .5;
     -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
   }
 
   .stagefast.expand{
-    left: 0;
+    bottom: 0;
   }
 
   .resume{
     grid-area: resume;
-    background color:
   }
 
   .name {
     font-size: 4rem;
     text-align: center;
     grid-area: name
-  }
-
-  .projects-wrapper {
-    grid-area: projects
   }
 
   .contact {

@@ -1,44 +1,36 @@
-window.onload = trimSvgWhitespace()
+window.onload = start()
 
-function trimSvgWhitespace() {
-  // get all SVG objects in the DOM
-  var svgs = document.getElementsByTagName("svg");
+function start(){
+  const navBox = document.querySelector('.nav-box');
+  const btns = navBox.getElementsByClassName("project-btn");
+  const projectsWrapper = document.querySelector('.projects-wrapper')
+  const projects = projectsWrapper.getElementsByClassName("project")
 
-  // go through each one and add a viewbox that ensures all children are visible
-  for (var i=0, l=svgs.length; i<l; i++) {
+  for (let i = 0; i < btns.length; i++){
+    btns[i].addEventListener("click", function(){
+      let currentBtn = document.getElementsByClassName("active-btn");
+      currentBtn[0].className = currentBtn[0].className.replace(" active-btn", "");
+      this.className += " active-btn"
+    });
 
-    var svg = svgs[i],
-        box = svg.getBBox(), // <- get the visual boundary required to view all children
-        viewBox = [box.x, box.y, box.width, box.height].join(" ");
-    // set viewable area based on value above
-    svg.setAttribute("viewBox", viewBox);
   }
-
-  function write (){
-    const wrapper = document.querySelector('.projects-wrapper')
-    const str = "Hi, I'm Dave. I am a full stack web developer and would love to help you make things. Please click on one of the project links above to see what I can do. "
-
-    return str.split('').forEach((letter) => {
-      return wrapper.innerHTML += letter
-    })
-  }
-
-  write()
-
 }
 
 
 document.getElementById('onboard-btn').addEventListener('click', function(){
-  console.log('ob')
+  document.querySelector('.urlink').classList.remove('expand')
+  document.querySelector('.stagefast').classList.remove('expand')
   document.querySelector('.onboard').classList.toggle('expand')
-  //document.querySelector('.project-notes').classList.toggle('expand')
-
 });
 
 document.getElementById('urlink-btn').addEventListener('click', function(){
+  document.querySelector('.onboard').classList.remove('expand')
+  document.querySelector('.stagefast').classList.remove('expand')
   document.querySelector('.urlink').classList.toggle('expand')
 });
 
 document.getElementById('stagefast-btn').addEventListener('click', function(){
+  document.querySelector('.urlink').classList.remove('expand')
+  document.querySelector('.onboard').classList.remove('expand')
   document.querySelector('.stagefast').classList.toggle('expand')
 });

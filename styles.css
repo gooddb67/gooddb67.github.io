@@ -7,6 +7,11 @@ a{
   color: black;
 }
 
+br {
+  display: block;
+  margin: 10px 0;
+}
+
 html {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -42,29 +47,31 @@ html {
 
 .wrapper {
   display: grid;
-  /*grid-template-columns: 1fr;
-  grid-template-rows: .5fr;
-  grid-auto-rows: 1fr;*/
   overflow-x: hidden;
   grid-template-areas:    "name"
                           "about"
                           "skills"
-                          "projects"
                           "contact"
 }
 
 .name {
   grid-area: name;
   position: relative;
+  background-color: #fff3c9;
+  font-family: 'Open Sans';
   font-size: 3rem;
   text-align: center;
-  background-color: #fff3c9;
-  font-family: 'Open Sans'
 }
 
 #about {
-  font-size: 2rem
+  font-size: 22px;
+  padding: 10px;
 }
+
+#made{
+  display: none;
+}
+
 
 .skills {
   grid-area: skills;
@@ -101,6 +108,14 @@ html {
 
 .linkedin{
   grid-area: linkedin;
+}
+
+.resume{
+  grid-area: resume;
+}
+
+.email{
+  grid-area: email
 }
 #skills-header{
   grid-column: span 2;
@@ -164,6 +179,7 @@ html {
 .project {
   position: relative;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .onboard{
@@ -184,7 +200,7 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.9);
   color: #fff;
   overflow: hidden;
   text-align: center;
@@ -194,23 +210,6 @@ html {
   transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
 }
 
-.overlay-name{
-  bottom: 100%;
-}
-
- .name:hover .overlay{
-  bottom: 0;
-}
-
-.overlay-skills{
-  right: 200%;
-  left: -100%;
-}
-
-.skills:hover .overlay{
-  right: 0;
-  left: 0;
-}
 
 .project-btn{
   cursor: pointer;
@@ -219,6 +218,10 @@ html {
   justify-content: center;
   vertical-align: middle;
   line-height: 3.84375em
+}
+
+.nav-box{
+  display: none;
 }
 
 
@@ -249,6 +252,10 @@ html {
     justify-content: space-around;
   }
 
+  .active-btn{
+    background-color: #aef6df;
+  }
+
   .projects-wrapper {
     background-size: cover;
     position: relative;
@@ -263,9 +270,7 @@ html {
   .project-notes {
     grid-area: description;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
     position: absolute;
     top: 0;
     right: 0;
@@ -282,10 +287,28 @@ html {
   }
 
   .overlay-project{
-    top: 50%
+    top: 65%
+  }
+
+  .project-description{
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  .welcome-text{
+    position: absolute;
+    border: 5px solid black;
+    font-size: 2rem;
+    padding: 15px;
+    height: auto
+  }
+
+  .welcome-wrapper{
+    position: relative;
   }
 
   .urlink {
+    background-size: cover;
     grid-area: project;
     position: absolute;
     top: 0;
@@ -293,7 +316,7 @@ html {
     bottom: 100%;
     left: 0;
     width:100%;
-    opacity: .5;
+    opacity: .8;
     -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
@@ -304,7 +327,7 @@ html {
   }
 
   .onboard {
-    opacity: .5;
+    opacity: .8;
     grid-area: project;
     position: absolute;
     top: 0;
@@ -329,7 +352,7 @@ html {
     bottom: 100%;
     left: 0;
     width:100%;
-    opacity: .5;
+    opacity: .8;
     -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
     transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
@@ -344,13 +367,17 @@ html {
   }
 
   .name {
-    font-size: 4rem;
-    text-align: center;
-    grid-area: name
+    font-size: 28px;
+    grid-area: name;
+    padding-left: 10px;
   }
 
   .contact {
     grid-area: contact;
+  }
+
+  #made{
+    display: block;
   }
 
   .skills {

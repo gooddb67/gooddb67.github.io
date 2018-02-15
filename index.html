@@ -13,8 +13,8 @@
   <body>
     <div class="wrapper">
       <div class="name">
-        <strong>David Goodman</strong><br>
-        <h3 id='about'><em>Full Stack Developer</em></h3>
+        <strong id="myName">David Goodman</strong><br>
+        <h3 class='about'><em>Full Stack Developer</em></h3>
       </div>
       <div class="skills">
           <div class="skill-item ruby">
@@ -51,9 +51,11 @@
       <div class="right-side">
         <section class="projects-wrapper">
           <div class="nav-box">
-            <a id="urlink-btn" class=" project-btn">URLINK</a>
-            <a id="onboard-btn" class=" active-btn project-btn">ONBOARD</a>
+            <a id="urlink-btn" class="project-btn">URLINK</a>
+            <a id="onboard-btn" class="project-btn">ONBOARD</a>
             <a id="stagefast-btn" class="project-btn">STAGEFAST</a>
+          </div>
+          <div class="welcome-text">
           </div>
               <div class="project urlink">
                 <div class="overlay overlay-project">
@@ -72,15 +74,20 @@
                 </div>
               </div>
               </div>
-                <div class="project expand onboard">
+                <div class="project  onboard">
                   <div class="overlay overlay-project">
                   <div class="project-notes">
                     <div class="project-description">
                       <p>A social network for alumni to share information on life at a specific company. Used React on the front end, and a Rails API on the back end. </p>
                     </div>
-                    <a href="https://github.com/cpan001/onboard-frontend" target="_blank">
-                      <img src="./images/github-white.svg" />
-                    </a>
+                      <div class="project-links">
+                      <a href="https://github.com/cpan001/onboard-frontend" target="_blank">
+                        <img src="./images/github-white.svg" />
+                      </a>
+                      <a href="https://vimeo.com/255667060" target="_blank">
+                        <img src="./images/video.svg" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -129,6 +136,7 @@
       </div>
       <!-- wrapper -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='scripts.js'></script>
   </body>
 

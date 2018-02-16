@@ -36,113 +36,58 @@ function start(){
 
 }
 
+function typer(str){
+  var spans = '<span>' + str.split('').join('</span><span>') + '</br></br></span>';
+  $(spans).hide().appendTo('.welcome-text').each(function (i) {
+      $(this).delay(45 * i).css({
+          display: 'inline',
+          opacity: 0
+      }).animate({
+          opacity: 1
+      }, 50);
+  });
+}
 
 
 
 function type(){
   var str = "Hi, I'm Dave!";
-  var spans = '<span>' + str.split('').join('</span><span>') + '</br></br></span>';
-  $(spans).hide().appendTo('.welcome-text').each(function (i) {
-      $(this).delay(45 * i).css({
-          display: 'inline',
-          opacity: 0
-      }).animate({
-          opacity: 1
-      }, 50);
-  });
+  typer(str)
 }
 
 function type1(){
   var str = "I'm a full stack web developer based in Brooklyn.";
-
-
-  var spans = '<span>' + str.split('').join('</span><span>') + '</br></br></span>';
-  $(spans).hide().appendTo('.welcome-text').each(function (i) {
-      $(this).delay(45 * i).css({
-          display: 'inline',
-          opacity: 0
-      }).animate({
-          opacity: 1
-      }, 50);
-  });
+  typer(str)
 }
 
 function type2(){
- var str2 = "I like to use the stuff in the orange box."
- var spans = '<span>' + str2.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 50);
- });
+ var str = "I like to use the stuff in the orange box."
+ typer(str)
 }
 
 function type3(){
- var str3 = "Click the buttons above to see what I've made."
- var spans = '<span>' + str3.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 50);
- });
+ var str = "Click the buttons above to see what I've made."
+ typer(str)
 }
 
 function type4(){
- var str4 = "There's a bunch of ways to get a hold of me."
- var spans = '<span>' + str4.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 50);
- });
+ var str = "There's a bunch of ways to get a hold of me."
+ typer(str)
 }
 
 function type5(){
- var str5 = "Just click one of those icons below."
- var spans = '<span>' + str5.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 50);
- });
+ var str = "Just click one of those icons below."
+ typer(str)
 }
 
 function type6(){
- var str6 = "Let's talk soon!"
- var spans = '<span>' + str6.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 50);
- });
+ var str = "Let's talk soon!"
+ typer(str)
 }
 
 function type7(){
- var str7 = "--Dave"
- var spans = '<span>' + str7.split('').join('</span><span>') + '</br></br></span>';
- $(spans).hide().appendTo('.welcome-text').each(function (i) {
-     $(this).delay(45 * i).css({
-         display: 'inline',
-         opacity: 0
-     }).animate({
-         opacity: 1
-     }, 100);
- });
+ var str = "--Dave"
+ typer(str)
 }
 
 

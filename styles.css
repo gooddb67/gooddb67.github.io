@@ -201,7 +201,7 @@ html {
 }
 
 .urlink{
-  background-image: url('./images/urlinkCover.png');
+  background-image: url('./images/urlink5.png');
 }
 
 .overlay {
@@ -324,7 +324,7 @@ html {
   .urlink,
   .onboard,
   .stagefast {
-    background-size: cover;
+    background-size: contain;
     grid-area: project;
     position: absolute;
     top: 0;

@@ -58,24 +58,22 @@ html {
 .name {
   text-align: center;
   background-color: #fff3c9;
-  font-family: 'Open Sans';
   grid-area: name;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 28px;
+  display: grid;
   grid-area: name;
   padding-left: 10px;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "name"
 }
 
-.about {
-  font-size: 35px;
-  padding: 10px;
-}
 
 #myName {
-  font-size: 50px
+  font-family: 'Catamaran';
+  font-size: 3rem;
+  grid-area: name;
+  margin: auto 0;
+  color: #f38686
 }
 
 #made{

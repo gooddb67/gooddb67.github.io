@@ -154,8 +154,7 @@ html {
 }
 
 .ruby {
-  grid-area: ruby
-}
+  grid-area: ruby}
 
 .rails {
   grid-area: rails
@@ -181,14 +180,23 @@ html {
   grid-area: projects;
   font-family: 'Open Sans';
   display: grid;
+  grid-template-rows: 65vh 65vh 65vh;
+}
+
+.one-col-proj{
+  display:grid;
+  grid-template-rows: 4fr 1fr;
   grid-template-columns: 100%;
-  grid-template-rows: 50vh 50vh 50vh;
+  grid-template-areas:
+  "."
+  "links";
 }
 
 .urlink-one-col{
   background-image: url('./images/urlink5.png');
   background-size: cover;
-  background-position: -140px;
+  background-position: -233px;
+
 }
 .stagefast-one-col{
   background-image: url('./images/stagefast2.png');
@@ -199,8 +207,31 @@ html {
 .onboard-one-col{
   background-image: url('./images/onBoardCover.png');
   background-size: cover;
-  background-position: -255px;
+  background-position: -435px;
   background-repeat: no-repeat;
+}
+
+
+
+.project-links{
+  display: flex;
+  grid-area: links;
+  justify-content: center;
+  background-color: white;
+}
+
+.project-links a {
+  flex-grow: 1;
+  display:flex;
+  justify-content: center;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+
+}
+
+.urlink-one-col a:first-child,
+.onboard-one-col a:first-child{
+  border-right: 5px solid black;
 }
 
 .projects-wrapper{
@@ -216,6 +247,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 
 .onboard{
   background-image: url('./images/onBoardCover.png');

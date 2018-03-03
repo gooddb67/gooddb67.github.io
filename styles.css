@@ -182,18 +182,25 @@ html {
   font-family: 'Open Sans';
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 50vh 50vh 50vh;
 }
 
 .urlink-one-col{
-  background-image: url('./images/onBoardCover.png');
+  background-image: url('./images/urlink5.png');
+  background-size: cover;
+  background-position: -140px;
 }
 .stagefast-one-col{
   background-image: url('./images/stagefast2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .onboard-one-col{
-  background-image: url('./images/urlink5.png');
+  background-image: url('./images/onBoardCover.png');
+  background-size: cover;
+  background-position: -255px;
+  background-repeat: no-repeat;
 }
 
 .projects-wrapper{
@@ -263,6 +270,9 @@ html {
     grid-template-areas: "name right"
                          "skills right "
                          "contact contact"
+  }
+  .one-col-projects{
+    display:none;
   }
 
   .overlay {
